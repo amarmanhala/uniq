@@ -20,4 +20,5 @@ export class ProductRepository {
   async findById(id: ObjectId): Promise<Product | null> {
     return this.collection().findOne({ _id: id });
   }
+  
 }

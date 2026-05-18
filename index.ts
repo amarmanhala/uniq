@@ -2,6 +2,7 @@ import 'dotenv/config';
 import express, { Request, Response, NextFunction } from 'express';
 import { connectDB } from './config/db';
 import productRoutes from './product/productRoutes';
+import userRoutes from './user/userRoutes';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,6 +14,7 @@ app.get('/', (_req: Request, res: Response) => {
 });
 
 app.use('/products', productRoutes);
+app.use('/users', userRoutes);
 
 // Global error handler
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
